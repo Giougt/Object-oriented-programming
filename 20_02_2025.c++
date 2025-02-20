@@ -74,4 +74,56 @@ a = 5;
 p = &a; // link object to pointer 
 q = p; //copy pointer 
 
-//object modification
+struct Rectangle { size_t width; size_t height; }; 
+
+// creating and using objects 
+
+Rectangle rect1;
+Rectangle rect2{};
+Rectangle rect3{ 3,4 };
+
+//member acess with the 'dot' notation
+rect1.width = 1;
+rect1.height = 2;
+rect2 = rect3; // copy assignement 
+rect3.height = 2 * rect1.height;
+
+Rectangle rect1;
+Rectangle rect2{};
+
+int m[5]; //reserves continuous memory for five integers (5 * 4 = 20 bytes )
+
+int a{ 5 };
+m[1] = a;
+m[4] = 6;
+int b{ a * m[4] };
+
+double a[2][3];
+
+size_t n{ 10 };
+
+
+class Student
+{
+    string _id;
+    string _name;
+public:
+    string get_id() const { return _id; }
+    string get_name() const;
+    :::
+}
+
+string Student::get_name() const
+{
+    _name = "123"; // Error!
+    return _name; // OK
+}
+
+class Bar
+{
+    int _b;
+public:
+    void set_b(int b) { _b = b; }
+    int ...
+}
+
